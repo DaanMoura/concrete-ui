@@ -1,2 +1,2 @@
 # concrete-ui
-ConcreteUI is a ~neubrutalist~ design system 🧱
+ConcreteUI is a _neubrutalist_ design system 🧱
