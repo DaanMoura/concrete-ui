@@ -42,13 +42,10 @@ build/Release
 node_modules/
 jspm_packages/
 
-<<<<<<< HEAD
 # TypeScript v1 declaration files
 typings/
-=======
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
->>>>>>> 575c1eb ([HEAD]: Init storybook and create the button)
 
 # TypeScript cache
 *.tsbuildinfo
@@ -59,12 +56,9 @@ web_modules/
 # Optional eslint cache
 .eslintcache
 
-<<<<<<< HEAD
-=======
 # Optional stylelint cache
 .stylelintcache
 
->>>>>>> 575c1eb ([HEAD]: Init storybook and create the button)
 # Microbundle cache
 .rpt2_cache/
 .rts2_cache_cjs/
@@ -98,6 +92,9 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
+
+# Storybook output
+storybook-static
 
 # Gatsby files
 .cache/

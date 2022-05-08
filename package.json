@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
     "@storybook/addon-interactions": "^6.4.22",
     "@storybook/addon-links": "^6.4.22",
     "@storybook/react": "^6.4.22",
+    "@storybook/storybook-deployer": "^2.8.11",
     "@storybook/testing-library": "^0.0.11",
     "@types/styled-components": "^5.1.25",
     "babel-loader": "^8.2.5"

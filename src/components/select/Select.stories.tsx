@@ -1,9 +1,9 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory } from "@storybook/react";
 import styled from 'styled-components'
 import Select from '.'
 
 export default {
-    title: 'Select',
+    title: 'Components/Select',
     component: Select,
     args: {
         ...Select.defaultProps,

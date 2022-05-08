@@ -8,14 +8,15 @@ ConcreteUI is a _neubrutalist_ design system with inspiration from [this medium 
 
 Make sure you have yarn or npm installed and follow these simple steps!
 
-1. Clone the repo and change to the project directory
+1. **Clone the repo and change to the project directory**
 
 ```
 git clone https://github.com/DaanMoura/concrete-ui
 cd concrete-ui
 ```
+---
 
-2. Install packages dependencies
+2. **Install packages dependencies**
 
 ```
 yarn install
@@ -25,7 +26,9 @@ or
 npm inst
 ```
 
-3. Run storybook
+---
+
+3. **Run storybook**
 ```
 yarn storybook
 ```

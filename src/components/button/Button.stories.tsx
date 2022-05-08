@@ -3,7 +3,7 @@ import colors from '../../theme/colors'
 import Button from '.';
 
 export default {
-    title: 'Button',
+    title: 'Components/Button',
     component: Button,
     argTypes: {
         baseColor: {
@@ -17,4 +17,3 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args}>Click me!</Button>;
 export const Default = Template.bind({});
-// Default.args = Button.defaultProps;
