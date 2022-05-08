@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import colors from '../../theme/colors'
-import Button from './Button';
+import Button from '.';
 
 export default {
     title: 'Button',

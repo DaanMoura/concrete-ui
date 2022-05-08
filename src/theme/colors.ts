@@ -25,7 +25,7 @@ const base = {
     pinkDark: '#CE31A2'
 }
 
-export default {
+const colors = {
     base,
     structure: {
         background: base.white,
@@ -88,3 +88,7 @@ export default {
         }
     }
 }
+
+export const colorNames = Object.keys(colors.state)
+
+export default colors
