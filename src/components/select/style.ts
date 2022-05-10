@@ -25,20 +25,20 @@ const StyledSelect = styled.div`
     border: 4px solid ${colors.structure.stroke};
     border-radius: 8px;
     padding: 8px 16px;
-    background: ${colors.structure.background};
+    background: ${colors.state.white.default};
     transform: translateY(0px);
     box-shadow: 0px 4px 0px ${colors.structure.blackShadow};
     transition: .2s;
 
     &:hover, &:focus {
         outline: none;
-        background: ${colors.structure.background};
+        background: ${colors.state.white.hover};
         transform: translateY(-4px);
         box-shadow: 0px 8px 0px ${colors.structure.blackShadow};
     }
 
     &:active {
-        background: ${colors.structure.background};
+        background: ${colors.state.white.active};
         transform: translateY(4px);
         box-shadow: 0px 0px;
     }
@@ -73,13 +73,17 @@ const StyledSelectListItem = styled.li`
     color: ${colors.text.primary};
     margin: 0;
     padding: 8px 16px;
-    background: ${colors.structure.background};
+    background: ${colors.state.white.default};
     border-bottom: 4px solid ${colors.structure.stroke};
-
+    cursor: pointer;
+    transition: .2s;
 
     &:hover, &:focus {
-        background: ${colors.base.grayLight};
-        cursor: pointer;
+        background: ${colors.state.white.hover};
+    }
+
+    &:active {
+        background: ${colors.state.white.active};
     }
 
     ${(props: { isSelected: boolean }) => props.isSelected && css`

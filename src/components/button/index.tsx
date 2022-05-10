@@ -14,7 +14,7 @@ const props = {
 
 export type ButtonProps = InferProps<typeof props>
 
-const Button: React.FC<ButtonProps> = (props: ButtonProps) =>
+const Button: React.FC<ButtonProps> = (props) =>
     <StyledButton {...props}>
         {props.children}
     </StyledButton>
