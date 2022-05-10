@@ -23,7 +23,7 @@ yarn install
 ```
 or
 ```
-npm inst
+npm install
 ```
 
 ---
