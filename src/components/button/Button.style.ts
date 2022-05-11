@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import colors from '../../theme/colors'
 import typography from '../../theme/typography'
 
-import { ButtonProps } from '.'
+import { ButtonProps } from './Button'
 
 const StyledButton = styled.button`
     ${typography.heading5}

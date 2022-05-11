@@ -2,7 +2,12 @@ import styled, { css } from 'styled-components'
 import colors from '../../theme/colors'
 import typography from '../../theme/typography'
 
-import { CheckboxProps } from '.'
+import { CheckboxProps } from './Checkbox'
+
+const disabledLabel =  css`
+    color: ${colors.text.disabled};
+    pointer-events: none;
+`
 
 const StyledLabel = styled.label`
     cursor: pointer;
@@ -13,10 +18,7 @@ const StyledLabel = styled.label`
     gap: 8px;
     transition: .2s;
 
-    ${(props: CheckboxProps) => props.disabled && css`
-        color: ${colors.text.disabled};
-        pointer-events: none;
-    `}
+    ${(props: CheckboxProps) => props.disabled && disabledLabel}
 `
 
 const StyledCheckbox = styled.input`

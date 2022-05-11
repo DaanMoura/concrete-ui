@@ -3,7 +3,7 @@ import PropsTypes, { InferProps } from 'prop-types'
 
 import { colorNames } from '../../theme/colors'
 
-import StyledButton from './style'
+import StyledButton from './Button.style'
 
 const props = {
     baseColor: PropsTypes.oneOf(colorNames),

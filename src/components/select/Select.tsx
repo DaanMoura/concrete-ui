@@ -7,7 +7,7 @@ import {
     StyledSelect, 
     StyledSelectList, 
     StyledSelectListItem 
-} from './style'
+} from './Select.style'
 
 import { useClickOutside, useEsc } from '../../hooks'
 

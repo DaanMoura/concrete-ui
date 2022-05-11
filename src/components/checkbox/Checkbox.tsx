@@ -5,7 +5,7 @@ import {
     StyledLabel,
     StyledCheckbox,
     StyledSpan
-} from './style';
+} from './Checkbox.style';
 
 const props = {
     checked: PropTypes.bool,
@@ -17,17 +17,13 @@ const props = {
 export type CheckboxProps = InferProps<typeof props>;
 
 const Checkbox: React.FC<CheckboxProps> = (props) => {
-    const [checked, setChecked] = React.useState(props.checked);
-
     const toggleChecked = () => {
-        const newChecked = !checked;
-        setChecked(newChecked)
-        props.onChange(newChecked)
+        props.onChange(!props.checked)
     }
 
     return (
         <StyledLabel {...props}>
-            <StyledCheckbox {...props} checked={checked} type="checkbox" onClick={toggleChecked} />
+            <StyledCheckbox {...props} type="checkbox" onClick={toggleChecked} />
             <StyledSpan>{props.label}</StyledSpan>
         </StyledLabel>
     )
@@ -37,7 +33,6 @@ const Checkbox: React.FC<CheckboxProps> = (props) => {
 Checkbox.displayName = 'Checkbox';
 
 Checkbox.defaultProps = {
-    checked: false,
     disabled: false,
     label: 'Check me'
 }

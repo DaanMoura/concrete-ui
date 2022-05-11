@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import { ComponentStory } from "@storybook/react";
-import Checkbox from ".";
+import Toggle from ".";
 
 export default {
-    title: 'Components/Checkbox',
-    component: Checkbox,
+    title: 'Components/Toggle',
+    component: Toggle,
     args: {
-        ...Checkbox.defaultProps,
+        ...Toggle.defaultProps,
 
     }
 }
 
-const Template: ComponentStory<typeof Checkbox> = (args) => {
+const Template: ComponentStory<typeof Toggle> = (args) => {
     const [checked, setChecked] = useState(args.checked);
 
     const toggleChecked = () => { setChecked(!checked) }
 
     return ( 
-        <Checkbox 
+        <Toggle 
             {...args} 
             checked={checked} 
             onChange={toggleChecked} 

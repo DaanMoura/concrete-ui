@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import colors from '../../theme/colors'
 import typography from '../../theme/typography'
 
-import { SelectProps } from '.'
+import { SelectProps } from './Select'
 
 const StyledSelectWrapper = styled.div`
     width: ${(props: SelectProps) => props.width};
