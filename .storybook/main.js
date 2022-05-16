@@ -1,22 +1,12 @@
 module.exports = {
   stories: [
+    '../stories/**/*.stories.@(ts|tsx|js|jsx)',
     '../src/**/*.stories.mdx', 
     '../src/**/*.stories.@(js|jsx|ts|tsx)'
   ],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    "@storybook/addon-actions",
-  ],
-  framework: '@storybook/react',
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
   typescript: {
-    check: false,
-    checkOptions: {},
-    reactDocgen: 'react-docgen-typescript',
-    reactDocgenTypescriptOptions: {
-      shouldExtractLiteralValuesFromEnum: true,
-      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
-    },
-  },
-}
+    check: true, // type-check stories during Storybook build
+  }
+};
