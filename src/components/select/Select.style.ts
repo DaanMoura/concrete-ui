@@ -5,7 +5,7 @@ import typography from '../../theme/typography'
 import { SelectProps } from './Select'
 
 const StyledSelectWrapper = styled.div`
-    width: ${(props: SelectProps) => props.width};
+    width: ${(props: { width: string }) => props.width};
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -59,7 +59,7 @@ const StyledSelect = styled.div`
 const StyledSelectList = styled.ul`
     position: absolute;
     z-index: 2;
-    width: ${(props: SelectProps) => `calc(${props.width} - 8px)`};
+    width: ${(props: { width: string }) => `calc(${props.width} - 8px)`};
     list-style: none;
     padding: 0;
     margin: 0;

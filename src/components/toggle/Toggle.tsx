@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import React, { HTMLAttributes } from 'react';
 
 import {
     StyledLabel,
@@ -7,24 +6,30 @@ import {
     StyledSpan
 } from './Toggle.style';
 
-const props = {
-    checked: PropTypes.bool,
-    disabled: PropTypes.bool,
-    onChange: PropTypes.func,
-    label: PropTypes.string,
-    rightLabel: PropTypes.bool
+interface ToggleProps extends HTMLAttributes<HTMLInputElement> {
+    checked?: boolean;
+    disabled?: boolean;
+    onToggle: (value: boolean) => void;
+    rightLabel?: boolean;
+    label?: string;
 }
 
-export type ToggleProps = InferProps<typeof props>;
 
 const Toggle: React.FC<ToggleProps> = (props) => {
 
     const toggleChecked = () => {
-        props.onChange(!props.checked)
+        if (props.disabled || !props.onToggle) {
+            return
+        }
+        props.onToggle(!props.checked)
     }
 
     return (
-        <StyledLabel {...props}>
+        <StyledLabel
+            disabled={props.disabled} 
+            rightLabel={props.rightLabel}
+            onToggle={toggleChecked} 
+        >
             <StyledToggle {...props} type="checkbox" onClick={toggleChecked} />
             <StyledSpan>{props.label}</StyledSpan>
         </StyledLabel>
@@ -40,6 +45,5 @@ Toggle.defaultProps = {
     rightLabel: false
 }
 
-Toggle.propTypes = props;
-
-export default Toggle;
+export default Toggle
+export { ToggleProps }

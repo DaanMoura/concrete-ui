@@ -1,28 +1,28 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 
 import {
     StyledLabel,
     StyledCheckbox,
     StyledSpan
-} from './Checkbox.style';
+} from './Checkbox.style'
 
-interface CheckboxProps {
+interface CheckboxProps extends HTMLAttributes<HTMLInputElement> {
     checked?: boolean;
     disabled?: boolean;
-    onChange?: (value: boolean) => void;
+    onToggle: (value: boolean) => void;
     label?: string;
 }
 
 const Checkbox: React.FC<CheckboxProps> = (props) => {
     const toggleChecked = () => {
-        if (props.disabled || !props.onChange) {
+        if (props.disabled || !props.onToggle) {
             return
         }
-        props.onChange(!props.checked)
+        props.onToggle(!props.checked)
     }
 
     return (
-        <StyledLabel disabled={props.disabled}>
+        <StyledLabel disabled={props.disabled} onToggle={toggleChecked} >
             <StyledCheckbox {...props} type="checkbox" onClick={toggleChecked} />
             <StyledSpan>{props.label}</StyledSpan>
         </StyledLabel>
@@ -37,6 +37,6 @@ Checkbox.defaultProps = {
     label: 'Check me'
 }
 
-// Checkbox.propTypes = props;
 
-export default Checkbox;
+export default Checkbox
+export { CheckboxProps }

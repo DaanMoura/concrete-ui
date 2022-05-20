@@ -1,3 +1,7 @@
+export const colorNames = ['white', 'red', 'yellow', 'green', 'cyan', 'blue', 'pink']
+
+export type ColorName = typeof colorNames[number]
+
 const base = {
     white: '#FFFFFF',
     grayLighter: '#EEEEEE',
@@ -6,7 +10,7 @@ const base = {
     grayDark: '#929292',
     black: '#000000',
     red: '#D64141',
-    redLight: '#DD6060',
+    redLight: '#070404',
     redDark: '#B92828',
     yellow: '#E2AE29',
     yellowLight: '#EBC566',
@@ -25,7 +29,35 @@ const base = {
     pinkDark: '#CE31A2'
 }
 
-const colors = {
+interface IColors {
+    base: typeof base,
+    structure: {
+        background: string,
+        stroke: string,
+        blackShadow: string
+    },
+    status: {
+        success: string,
+        warning: string,
+        error: string
+    },
+    text: {
+        primary: string,
+        secondary: string,
+        negative: string,
+        disabled: string
+    },
+    state: {
+        [key in ColorName]: {
+            default: string,
+            hover: string,
+            active: string,
+            disabled: string
+        }
+    }
+}
+
+const colors: IColors = {
     base,
     structure: {
         background: base.white,
@@ -86,9 +118,8 @@ const colors = {
             active: base.pinkDark,
             disabled: base.gray
         }
-    }
+    } 
 }
 
-export const colorNames = Object.keys(colors.state)
 
 export default colors
