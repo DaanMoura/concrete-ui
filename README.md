@@ -1,6 +1,41 @@
-# TSDX React w/ Storybook User Guide
+# ConcreteUI
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
+> 🏗 Very early stage
+
+ConcreteUI is a _neubrutalist_ design system with inspiration from [this medium article](https://medium.com/user-experience-design-1/neubrutalism-is-taking-over-the-web-e9d09e0fe441).
+
+## Getting Started
+
+Make sure you have yarn or npm installed and follow these simple steps!
+
+### 1. **Clone the repo and change to the project directory**
+
+```
+git clone https://github.com/DaanMoura/concrete-ui
+cd concrete-ui
+```
+
+### 2. **Install packages dependencies**
+
+```
+yarn install
+```
+or
+```
+npm install
+```
+
+### 3. **Run storybook**
+```
+yarn storybook
+```
+or
+```
+npm run storybook
+```
+
+---
+## TSDX React w/ Storybook User Guide
 
 > This TSDX setup is meant for developing React component libraries (not apps!) that can be published to NPM. If you’re looking to build a React-based app, you should use `create-react-app`, `razzle`, `nextjs`, `gatsby`, or `react-static`.
 
@@ -20,34 +55,6 @@ This builds to `/dist` and runs the project in watch mode so any edits you save 
 
 Then run either Storybook or the example playground:
 
-### Storybook
-
-Run inside another terminal:
-
-```bash
-yarn storybook
-```
-
-This loads the stories from `./stories`.
-
-> NOTE: Stories should reference the components as if using the library, similar to the example playground. This means importing from the root project directory. This has been aliased in the tsconfig and the storybook webpack config as a helper.
-
-### Example
-
-Then run the example inside another:
-
-```bash
-cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
-```
-
-The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, we use [Parcel's aliasing](https://parceljs.org/module_resolution.html#aliases).
-
-To do a one-off build, use `npm run build` or `yarn build`.
-
-To run tests, use `npm test` or `yarn test`.
-
 ## Configuration
 
 Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
@@ -59,35 +66,6 @@ Jest tests are set up to run with `npm test` or `yarn test`.
 ### Bundle analysis
 
 Calculates the real cost of your library using [size-limit](https://github.com/ai/size-limit) with `npm run size` and visulize it with `npm run analyze`.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/example
-  index.html
-  index.tsx       # test your component here in a demo app
-  package.json
-  tsconfig.json
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-/stories
-  Thing.stories.tsx # EDIT THIS
-/.storybook
-  main.js
-  preview.js
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
-```
-
-#### React Testing Library
-
-We do not set up `react-testing-library` for you yet, we welcome contributions and documentation on this.
 
 ### Rollup
 
