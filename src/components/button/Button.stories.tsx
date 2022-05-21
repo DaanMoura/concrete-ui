@@ -1,3 +1,4 @@
+import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import colors from '../../theme/colors'
 import Button from '.';

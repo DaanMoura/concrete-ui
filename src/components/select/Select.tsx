@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import PropsTypes, { InferProps } from 'prop-types'
 import { FaChevronDown } from 'react-icons/fa'
 
 import {
@@ -11,16 +10,14 @@ import {
 
 import { useClickOutside, useEsc } from '../../hooks'
 
-const props = {
-    disabled: PropsTypes.bool,
-    options: PropsTypes.arrayOf(PropsTypes.string),
-    value: PropsTypes.string,
-    onChange: PropsTypes.func,
-    placeholder: PropsTypes.string,
-    width: PropsTypes.string
+interface SelectProps extends React.HTMLAttributes<HTMLDivElement> {
+    disabled?: boolean
+    options: string[]
+    onUpdate: (value: string) => void
+    value: string
+    placeholder?: string
+    width?: string
 }
-
-export type SelectProps = InferProps<typeof props>
 
 const Select: React.FC<SelectProps> = (props: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -36,17 +33,17 @@ const Select: React.FC<SelectProps> = (props: SelectProps) => {
     const handleChange = (value: string) => {
         setSelectedValue(value);
         setIsOpen(false);
-        props.onChange(value);
+        props.onUpdate(value);
     }
 
     return (
-        <StyledSelectWrapper ref={selectWrapperRef} width={props.width}>
+        <StyledSelectWrapper ref={selectWrapperRef} width={props.width ?? '100%'}>
             <StyledSelect onClick={toggleOpen} {...props}>
                 <span>{ selectedValue || props.placeholder }</span>
                 <FaChevronDown />
             </StyledSelect>
             { (isOpen && !props.disabled) && (
-                <StyledSelectList width={props.width}>
+                <StyledSelectList width={props.width ?? '100%'}>
                     { props.options.map((option) => (
                         <StyledSelectListItem 
                             {...{isSelected: isSelected(option)}}
@@ -69,6 +66,5 @@ Select.defaultProps = {
     width: '100%'
 }
 
-Select.propTypes = props
-
 export default Select;
+export { SelectProps }

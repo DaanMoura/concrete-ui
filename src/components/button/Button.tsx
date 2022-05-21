@@ -1,22 +1,18 @@
-import * as React from 'react'
-import PropsTypes, { InferProps } from 'prop-types'
-
-import { colorNames } from '../../theme/colors'
+import React, { HTMLAttributes, ReactNode } from 'react'
+import { ColorName } from '../../theme/colors'
 
 import StyledButton from './Button.style'
 
-const props = {
-    baseColor: PropsTypes.oneOf(colorNames),
-    disabled: PropsTypes.bool,
-    onClick: PropsTypes.func,
-    children: PropsTypes.node
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+    baseColor?: ColorName
+    disabled?: boolean
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
+    children?: ReactNode
 }
 
-export type ButtonProps = InferProps<typeof props>
-
-const Button: React.FC<ButtonProps> = (props) =>
+const Button: React.FC<ButtonProps> = ({ children, ...props}) =>
     <StyledButton {...props}>
-        {props.children}
+        {children}
     </StyledButton>
 
 Button.displayName = 'Button'
@@ -26,6 +22,5 @@ Button.defaultProps = {
     disabled: false
 }
 
-Button.propTypes = props
-
-export default Button;
+export default Button
+export { ButtonProps }
