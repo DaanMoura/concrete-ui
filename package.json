@@ -36,7 +36,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "concrete-ui",
+  "name": "@daanmoura/concrete-ui",
   "author": "Daniel Moura",
   "module": "dist/concrete-ui.esm.js",
   "size-limit": [
